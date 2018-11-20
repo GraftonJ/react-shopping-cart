@@ -1,7 +1,7 @@
 import React from 'react'
-import Item from '../cart-item/cart-item'
+import CartItem from '../cart-item/cart-item'
 
-const Items = () => {
+const CartItems = () => {
   return (
     <div className="container">
       <h1>Cart Items</h1>
@@ -13,10 +13,10 @@ const Items = () => {
             <div className="col-md-2">Quantity</div>
           </div>
         </div>
-        <Item />
+        <CartItem />
       </div>
     </div>
   )
 }
 
-export default Items
+export default CartItems
