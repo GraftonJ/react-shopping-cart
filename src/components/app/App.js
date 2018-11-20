@@ -6,12 +6,13 @@ import Items from '../cart-items/cart-items.js'
 
 
 class App extends Component {
+
   render() {
     return (
       <div className='App'>
         <Header />
         <Items />
-        <CartFooter />
+        <CartFooter copyright='2018' />
       </div>
     )
   }
