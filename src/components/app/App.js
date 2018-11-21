@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cartItemsList: [
+      items: [
         { id: 1,
           product: {
             id: 40,
@@ -27,12 +27,14 @@ class App extends Component {
           },
             quantity: 2
           },
-        { id: 3, product: {
-          id: 42,
-          name: 'Intelligent Paper Knife',
-          priceInCents: 1999
-        }, quantity: 1
-      },
+        { id: 3,
+          product: {
+            id: 42,
+            name: 'Intelligent Paper Knife',
+            priceInCents: 1999
+          },
+            quantity: 1
+        },
     ]
   }
 }
@@ -42,8 +44,8 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
-        <CartItems items={this.state.products}/>
-        <CartFooter copyright='208' />
+        <CartItems items={this.state.items}/>
+        <CartFooter copyright='2018' />
       </div>
     )
   }
