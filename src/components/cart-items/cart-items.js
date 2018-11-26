@@ -3,8 +3,6 @@ import CartItem from '../cart-item/cart-item'
 
 export default class CartItems extends React.Component {
   render() {
-    console.log('this.props', this.props)
-
     return (
       <div className="container">
         <h1>Cart Items</h1>

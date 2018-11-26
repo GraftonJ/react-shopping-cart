@@ -44,19 +44,44 @@ class App extends Component {
             name: 'Intelligent Paper Knife',
             priceInCents: 1999
           },
-            quantity: 1
+          quantity: 1
         },
       ]
     }
   }
 
+  addToCart = ({product, quantity}) => {
+    //find current max id
+    const maxId = this.state.items
+      .reduce((acc, el) => Math.max(acc, el.id), 0)
+    //Set the next id value
+    const nextMaxId = maxId + 1
+    //Find product info to add to the Cart
+    let addProduct = {}
+    this.state.products.forEach((elem) => {
+      if(elem.name === product) {
+        addProduct = elem
+      }
+    })
+
+    //Set the new state after form submission
+    this.setState({
+      ...this.state,
+      items: this.state.items.concat({
+        id: nextMaxId,
+        product: addProduct,
+        quantity: quantity
+      })
+    })
+  }
+
   render() {
-    console.log(this.props);
     return (
       <div className='App'>
         <Header />
         <CartItems items={this.state.items}/>
-        <AddItem products={this.state.products}/>
+        <h5>Total Price: ${this.state.items.map((elem) => (elem.product.priceInCents * elem.quantity)).reduce((acc, idx) => (acc + idx))/100}</h5>
+        <AddItem addToCartCB={this.addToCart} products={this.state.products}/>
         <CartFooter copyright='2018' />
       </div>
     )
