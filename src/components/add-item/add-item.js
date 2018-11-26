@@ -43,7 +43,7 @@ export default class AddItem extends React.Component {
           <div className="form-group">
             <label>Product</label>
             <select className="form-control" id="products" defaultValue={this.state.product} onChange={this.onProductSelect}>
-              <option value="" selected disabled>Please select</option>
+              <option value="" selected disabled>Select an option...</option>
               {/*map through products prop from app.js (this.state.products) to set the product options*/}
               {this.props.products.map((elem) => <option key={elem.id}>{elem.name}</option>)}
             </select>
