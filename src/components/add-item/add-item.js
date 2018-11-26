@@ -33,6 +33,7 @@ export default class AddItem extends React.Component {
   }
 
   render() {
+    console.log("This.props>>>>", this.props);
     return (
       <div className="container">
         <form onSubmit={this.onSubmit}>
